@@ -26,9 +26,9 @@ end
 
 
 def update_player(player, env_items, delta)
-  player.position.x -= PLAYER_HOR_SPD * delta if is_key_down(KEY_LEFT)
-  player.position.x += PLAYER_HOR_SPD*delta if is_key_down(KEY_RIGHT)
-  if (is_key_down(KEY_SPACE) && player.can_jump?)
+  player.position.x -= PLAYER_HOR_SPD * delta if is_key_down?(KEY_LEFT)
+  player.position.x += PLAYER_HOR_SPD*delta if is_key_down?(KEY_RIGHT)
+  if (is_key_down?(KEY_SPACE) && player.can_jump?)
     player.speed = -PLAYER_JUMP_SPD
     player.can_jump = false
   end
@@ -209,13 +209,13 @@ until window_should_close?
     camera.zoom = 0.25
   end
 
-  if is_key_pressed(KEY_R)
+  if is_key_pressed?(KEY_R)
     camera.zoom = 1.0
     player.position.x = 400
     player.position.y = 280
   end
 
-  if is_key_pressed(KEY_C)
+  if is_key_pressed?(KEY_C)
     camera_option += 1
     camera_option = 0 if camera_option >= camera_descriptions.length
   end

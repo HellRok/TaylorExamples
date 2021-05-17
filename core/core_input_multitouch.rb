@@ -23,13 +23,13 @@ until window_should_close?    # Detect window close button or ESC key
 
   ball_colour = BEIGE
 
-  ball_colour = MAROON if is_mouse_button_down(MOUSE_LEFT_BUTTON)
-  ball_colour = LIME if is_mouse_button_down(MOUSE_MIDDLE_BUTTON)
-  ball_colour = DARKBLUE if is_mouse_button_down(MOUSE_RIGHT_BUTTON)
+  ball_colour = MAROON if is_mouse_button_down?(MOUSE_LEFT_BUTTON)
+  ball_colour = LIME if is_mouse_button_down?(MOUSE_MIDDLE_BUTTON)
+  ball_colour = DARKBLUE if is_mouse_button_down?(MOUSE_RIGHT_BUTTON)
 
-  touch_counter = 10 if is_mouse_button_pressed(MOUSE_LEFT_BUTTON)
-  touch_counter = 10 if is_mouse_button_pressed(MOUSE_MIDDLE_BUTTON)
-  touch_counter = 10 if is_mouse_button_pressed(MOUSE_RIGHT_BUTTON)
+  touch_counter = 10 if is_mouse_button_pressed?(MOUSE_LEFT_BUTTON)
+  touch_counter = 10 if is_mouse_button_pressed?(MOUSE_MIDDLE_BUTTON)
+  touch_counter = 10 if is_mouse_button_pressed?(MOUSE_RIGHT_BUTTON)
 
   touch_counter -= 1 if touch_counter > 0
 

@@ -35,9 +35,9 @@ set_target_fps(60) # Set our game to run at 60 frames-per-second
 # Main game loop
 until window_should_close? do # Detect window close button or ESC key
   # Update
-  toggle_fullscreen if is_key_pressed(KEY_F)   # modifies window size when scaling!
+  toggle_fullscreen if is_key_pressed?(KEY_F)   # modifies window size when scaling!
 
-  if is_key_pressed(KEY_R)
+  if is_key_pressed?(KEY_R)
     if is_window_state?(FLAG_WINDOW_RESIZABLE)
       clear_window_state(FLAG_WINDOW_RESIZABLE)
     else
@@ -45,7 +45,7 @@ until window_should_close? do # Detect window close button or ESC key
     end
   end
 
-  if is_key_pressed(KEY_D)
+  if is_key_pressed?(KEY_D)
     if is_window_state?(FLAG_WINDOW_UNDECORATED)
       clear_window_state(FLAG_WINDOW_UNDECORATED)
     else
@@ -53,7 +53,7 @@ until window_should_close? do # Detect window close button or ESC key
     end
   end
 
-  if is_key_pressed(KEY_H)
+  if is_key_pressed?(KEY_H)
     set_window_state(FLAG_WINDOW_HIDDEN) unless is_window_state?(FLAG_WINDOW_HIDDEN)
 
     frames_counter = 0
@@ -64,7 +64,7 @@ until window_should_close? do # Detect window close button or ESC key
     clear_window_state(FLAG_WINDOW_HIDDEN) if frames_counter >= 240 # Show window after 3 seconds
   end
 
-  if is_key_pressed(KEY_N)
+  if is_key_pressed?(KEY_N)
     minimise_window unless is_window_state?(FLAG_WINDOW_MINIMISED)
 
     frames_counter = 0
@@ -75,7 +75,7 @@ until window_should_close? do # Detect window close button or ESC key
     restore_window if frames_counter >= 240 # Restore window after 3 seconds
   end
 
-  if is_key_pressed(KEY_M)
+  if is_key_pressed?(KEY_M)
     # NOTE: Requires FLAG_WINDOW_RESIZABLE enabled!
     if is_window_state?(FLAG_WINDOW_MAXIMISED)
       restore_window
@@ -84,7 +84,7 @@ until window_should_close? do # Detect window close button or ESC key
     end
   end
 
-  if is_key_pressed(KEY_U)
+  if is_key_pressed?(KEY_U)
     if is_window_state?(FLAG_WINDOW_UNFOCUSED)
       clear_window_state(FLAG_WINDOW_UNFOCUSED)
     else
@@ -92,7 +92,7 @@ until window_should_close? do # Detect window close button or ESC key
     end
   end
 
-  if is_key_pressed(KEY_T)
+  if is_key_pressed?(KEY_T)
     if is_window_state?(FLAG_WINDOW_TOPMOST)
       clear_window_state(FLAG_WINDOW_TOPMOST)
     else
@@ -100,7 +100,7 @@ until window_should_close? do # Detect window close button or ESC key
     end
   end
 
-  if is_key_pressed(KEY_A)
+  if is_key_pressed?(KEY_A)
     if is_window_state?(FLAG_WINDOW_ALWAYS_RUN)
       clear_window_state(FLAG_WINDOW_ALWAYS_RUN)
     else
@@ -108,7 +108,7 @@ until window_should_close? do # Detect window close button or ESC key
     end
   end
 
-  if is_key_pressed(KEY_V)
+  if is_key_pressed?(KEY_V)
     if is_window_state?(FLAG_VSYNC_HINT)
       clear_window_state(FLAG_VSYNC_HINT)
     else

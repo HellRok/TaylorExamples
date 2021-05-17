@@ -13,10 +13,10 @@ set_target_fps(60) # Set our game to run at 60 frames-per-second
 # Main game loop
 until window_should_close? # Detect window close button or ESC key
   # Update
-  ball_position.x += 2 if is_key_down(KEY_RIGHT)
-  ball_position.x -= 2 if is_key_down(KEY_LEFT)
-  ball_position.y -= 2 if is_key_down(KEY_UP)
-  ball_position.y += 2 if is_key_down(KEY_DOWN)
+  ball_position.x += 2 if is_key_down?(KEY_RIGHT)
+  ball_position.x -= 2 if is_key_down?(KEY_LEFT)
+  ball_position.y -= 2 if is_key_down?(KEY_UP)
+  ball_position.y += 2 if is_key_down?(KEY_DOWN)
 
   # Draw
   begin_drawing

@@ -39,7 +39,7 @@ until window_should_close? # Detect window close button or ESC key
 
   clear_background(RAYWHITE)
 
-  if is_gamepad_available(0)
+  if is_gamepad_available?(0)
     gamepad_name = get_gamepad_name(0)
     draw_text("GP1: #{gamepad_name}", 10, 10, 10, BLACK)
 
@@ -47,27 +47,27 @@ until window_should_close? # Detect window close button or ESC key
       draw_texture(tex_xbox_pad, 0, 0, DARKGRAY)
 
       # Draw buttons: xbox home
-      draw_circle(394, 89, 19, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_MIDDLE)
+      draw_circle(394, 89, 19, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_MIDDLE)
 
       # Draw buttons: basic
-      draw_circle(436, 150, 9, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_MIDDLE_RIGHT)
-      draw_circle(352, 150, 9, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_MIDDLE_LEFT)
-      draw_circle(501, 151, 15, BLUE) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_LEFT)
-      draw_circle(536, 187, 15, LIME) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_DOWN)
-      draw_circle(572, 151, 15, MAROON) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_RIGHT)
-      draw_circle(536, 115, 15, GOLD) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_UP)
+      draw_circle(436, 150, 9, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_MIDDLE_RIGHT)
+      draw_circle(352, 150, 9, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_MIDDLE_LEFT)
+      draw_circle(501, 151, 15, BLUE) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_LEFT)
+      draw_circle(536, 187, 15, LIME) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_DOWN)
+      draw_circle(572, 151, 15, MAROON) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_RIGHT)
+      draw_circle(536, 115, 15, GOLD) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_UP)
 
       # Draw buttons: d-pad
       draw_rectangle(317, 202, 19, 71, BLACK)
       draw_rectangle(293, 228, 69, 19, BLACK)
-      draw_rectangle(317, 202, 19, 26, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_UP)
-      draw_rectangle(317, 202 + 45, 19, 26, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_DOWN)
-      draw_rectangle(292, 228, 25, 19, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_LEFT)
-      draw_rectangle(292 + 44, 228, 26, 19, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_RIGHT)
+      draw_rectangle(317, 202, 19, 26, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_UP)
+      draw_rectangle(317, 202 + 45, 19, 26, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_DOWN)
+      draw_rectangle(292, 228, 25, 19, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_LEFT)
+      draw_rectangle(292 + 44, 228, 26, 19, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_RIGHT)
 
       # Draw buttons: left-right back
-      draw_circle(259, 61, 20, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_TRIGGER_1)
-      draw_circle(536, 61, 20, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_TRIGGER_1)
+      draw_circle(259, 61, 20, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_TRIGGER_1)
+      draw_circle(536, 61, 20, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_TRIGGER_1)
 
       # Draw axis: left joystick
       draw_circle(259, 152, 39, BLACK)
@@ -91,27 +91,27 @@ until window_should_close? # Detect window close button or ESC key
       draw_texture(tex_ps3_pad, 0, 0, DARKGRAY)
 
       # Draw buttons: ps
-      draw_circle(396, 222, 13, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_MIDDLE)
+      draw_circle(396, 222, 13, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_MIDDLE)
 
       # Draw buttons: basic
-      draw_rectangle(328, 170, 32, 13, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_MIDDLE_LEFT)
-      draw_triangle(triangle_left, triangle_right, triangle_top, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_MIDDLE_RIGHT)
-      draw_circle(557, 144, 13, LIME) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_UP)
-      draw_circle(586, 173, 13, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_RIGHT)
-      draw_circle(557, 203, 13, VIOLET) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_DOWN)
-      draw_circle(527, 173, 13, PINK) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_FACE_LEFT)
+      draw_rectangle(328, 170, 32, 13, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_MIDDLE_LEFT)
+      draw_triangle(triangle_left, triangle_right, triangle_top, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_MIDDLE_RIGHT)
+      draw_circle(557, 144, 13, LIME) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_UP)
+      draw_circle(586, 173, 13, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_RIGHT)
+      draw_circle(557, 203, 13, VIOLET) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_DOWN)
+      draw_circle(527, 173, 13, PINK) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_FACE_LEFT)
 
       # Draw buttons: d-pad
       draw_rectangle(225, 132, 24, 84, BLACK)
       draw_rectangle(195, 161, 84, 25, BLACK)
-      draw_rectangle(225, 132, 24, 29, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_UP)
-      draw_rectangle(225, 132 + 54, 24, 30, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_DOWN)
-      draw_rectangle(195, 161, 30, 25, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_LEFT)
-      draw_rectangle(195 + 54, 161, 30, 25, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_FACE_RIGHT)
+      draw_rectangle(225, 132, 24, 29, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_UP)
+      draw_rectangle(225, 132 + 54, 24, 30, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_DOWN)
+      draw_rectangle(195, 161, 30, 25, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_LEFT)
+      draw_rectangle(195 + 54, 161, 30, 25, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_FACE_RIGHT)
 
       # Draw buttons: left-right back buttons
-      draw_circle(239, 82, 20, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_LEFT_TRIGGER_1)
-      draw_circle(557, 82, 20, RED) if is_gamepad_button_down(0, GAMEPAD_BUTTON_RIGHT_TRIGGER_1)
+      draw_circle(239, 82, 20, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_LEFT_TRIGGER_1)
+      draw_circle(557, 82, 20, RED) if is_gamepad_button_down?(0, GAMEPAD_BUTTON_RIGHT_TRIGGER_1)
 
       # Draw axis: left joystick
       draw_circle(319, 255, 35, BLACK)

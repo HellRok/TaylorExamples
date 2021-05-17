@@ -16,9 +16,9 @@ until window_should_close? # Detect window close button or ESC key
   # Update
   ball_position = get_mouse_position
 
-  ball_color = MAROON if is_mouse_button_pressed(MOUSE_LEFT_BUTTON)
-  ball_color = LIME if is_mouse_button_pressed(MOUSE_MIDDLE_BUTTON)
-  ball_color = DARKBLUE if is_mouse_button_pressed(MOUSE_RIGHT_BUTTON)
+  ball_color = MAROON if is_mouse_button_pressed?(MOUSE_LEFT_BUTTON)
+  ball_color = LIME if is_mouse_button_pressed?(MOUSE_MIDDLE_BUTTON)
+  ball_color = DARKBLUE if is_mouse_button_pressed?(MOUSE_RIGHT_BUTTON)
 
     # Draw
     begin_drawing();

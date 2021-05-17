@@ -41,16 +41,16 @@ until window_should_close? # Detect window close button or ESC key
   # Update
 
   # Player movement
-  player.x += 2 if is_key_down(KEY_RIGHT)
-  player.x -= 2 if is_key_down(KEY_LEFT)
+  player.x += 2 if is_key_down?(KEY_RIGHT)
+  player.x -= 2 if is_key_down?(KEY_LEFT)
 
   # Camera target follows player
   camera.target.x = player.x + 20
   camera.target.y = player.y + 20
 
   # Camera rotation controls
-  camera.rotation -= 1 if is_key_down(KEY_A)
-  camera.rotation += 1 if is_key_down(KEY_S)
+  camera.rotation -= 1 if is_key_down?(KEY_A)
+  camera.rotation += 1 if is_key_down?(KEY_S)
 
   # Limit camera rotation to 80 degrees (-40 to 40)
   camera.rotation = 40 if camera.rotation > 40
@@ -63,7 +63,7 @@ until window_should_close? # Detect window close button or ESC key
   camera.zoom = 0.1 if camera.zoom < 0.1
 
   # Camera reset (zoom and rotation)
-  if is_key_pressed(KEY_R)
+  if is_key_pressed?(KEY_R)
     camera.zoom = 1
     camera.rotation = 0
   end
